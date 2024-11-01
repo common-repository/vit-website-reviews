@@ -1,0 +1,252 @@
+/*
+ * Author URI: https://vincoit.com
+ * License: GNU General Public License v3 (GPL-3)
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+
+ * File Description:
+ * This file contains the custom styling options for Dashboard.php
+ * This file is intended for Dashboard styling ONLY!
+ * For default styling of other submenu pages please use the corresponding stylesheet.
+ * */
+
+* {
+    font-family: Arial;
+}
+/*override uikit white bg*/
+html.wp-toolbar {
+    background: transparent !important;
+}
+
+body {
+    height: 100vh;
+}
+
+#chart, .chart-box {
+    padding-top: 20px;
+    padding-left: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 22px 35px -16px rgba(0,0,0, 0.1);
+}
+
+select.flat-select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #008FFB url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'60px\' height=\'60px\'><polyline fill=\'white\' points=\'46.139,15.518 25.166,36.49 4.193,15.519\'/></svg>") no-repeat scroll right 2px top 9px / 16px 16px;
+    border: 0 none;
+    border-radius: 3px;
+    color: #fff;
+    font-family: arial,tahoma;
+    font-size: 16px;
+    font-weight: bold;
+    outline: 0 none;
+    height: 33px;
+    padding: 5px 20px 5px 10px;
+    text-align: center;
+    text-indent: 0.01px;
+    text-overflow: "";
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease 0s;
+    width: auto;
+    -webkit-transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -ms-transition: 0.3s ease all;
+    -o-transition: 0.3s ease all;
+    transition: 0.3s ease all;
+  }
+  select.flat-select:focus, select.flat-select:hover {
+    border: 0;
+    outline: 0;
+  }
+
+.toolbar {
+    margin-left: 45px;
+}
+
+button {
+    background: #fff;
+    color: #222;
+    border: 1px solid #e7e7e7;
+    border-bottom: 2px solid #ddd;
+    border-radius: 2px;
+    padding: 4px 17px;
+}
+
+button.active {
+    color: #fff;
+    background: #008FFB;
+    border: 1px solid blue;
+    border-bottom: 2px solid blue;
+}
+
+button:focus {
+    outline: 0;
+}
+
+
+/* @info:  datetime chart  css */
+
+
+.apexcharts-canvas {
+    margin: 0 auto;
+}
+
+#datetimeChart {
+    /*max-width: 650px;*/
+    padding:30px 30px 0px 30px;
+    margin: 35px auto;
+}
+
+.apexcharts-yaxis-label{
+    margin-right:2rem;
+}
+
+/* @info: END datetime chart  css */
+
+/* @info: APEX rating charts css */
+
+.header {
+    position: relative;
+}
+
+.vit-logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 180px;
+}
+
+.header.premium {
+    display: flex;
+    flex-direction: column;
+}
+
+.header.premium .vit-logo {
+    position: unset;
+    order: 1;
+}
+
+.header.premium h2 {
+    order: 2;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.header.premium .card-info {
+    order: 3;
+    display: flex;
+}
+
+.vit-wr-rating-statistics{
+    display: flex;
+}
+
+#totalRating {
+    width: 280px;
+}
+
+/* Textual features  */
+
+.card-info {
+    margin-left:20px;
+}
+
+.card-header {
+    font-weight: 500;
+}
+
+.apex-date-filter {
+    margin-left: 20px;
+}
+
+/* @info: END APEX rating charts css */
+
+
+/* Start of extra Dashboard Css  */
+
+    #dashboard-container .uk-card-body {
+        min-height: 300px;
+        display: block !important;
+        margin-top: 0 !important;
+    }
+
+    #datetimeChart {
+        padding: 0 !important;
+    }
+
+    .vit-wr-wrapper {
+        padding: 35px;
+        position: relative;
+    }
+    
+    .vit-wr-wrapper > .uk-grid {
+        margin-bottom: 15px;
+    }
+
+    .vit-wr-wrapper .header {
+        margin-bottom: 40px;
+    }
+
+    #averageRating svg, #totalRating svg {
+        overflow: visible !important;
+    }
+
+    /*Dashboard media queries:*/
+
+    @media screen and (min-width: 960px) and (max-width: 1220px) {
+
+        .vit-wr-rating-statistics{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        #dashboard-container .uk-grid .uk-margin-small-right  {
+            margin-right: 0 !important;
+            margin-bottom: 15px;
+        }
+    }
+
+    @media screen and (min-width: 960px) and (max-width: 1070px) {
+        #averageRating {
+            margin-right: -20px;
+            transform: scale(0.9);
+        }
+        #totalRating {
+            transform: scale(0.9);
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        .vit-logo {
+            display: none;
+        }
+        .vit-wr-rating-statistics {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #apex_radarChart svg {
+            overflow: visible;
+        }
+        #apex_radarChart .apexcharts-canvas {
+            transform: scale(0.7);
+        }   
+        #datetimeChart .toolbar {
+            margin-left: 0;
+        }
+        #datetimeChart .apexcharts-canvas {
+            transform: translateX(-30px);
+        }  
+        .vit-wr-rating-statistics {
+            display: flex;
+            justify-content: center;
+         }
+
+    }
+    /* End of extra Dashboard Css  */
+
+
